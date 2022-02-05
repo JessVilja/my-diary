@@ -1,0 +1,22 @@
+.dashed-border {
+  border: 3px dashed black;
+  border-radius: 1rem;
+  background-color: lightgray;
+}
+
+.blogpost-image {
+  max-width: 100%;
+  padding-right: 2rem;
+}
+
+#blogposts-list {
+  list-style: none;
+}
+/*
+.listContainer {
+  background-color: pink;
+} */
+/*
+.inputContainer {
+  max-width: 70%;
+} */
