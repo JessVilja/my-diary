@@ -20,14 +20,19 @@ function printPosts() {
     const image = document.createElement("img");
     image.className = "blogpost-image";
     const content = document.createElement("p");
+    const dateEl = document.createElement("span");
+    const removeBlogpost = document.createElement("button");
 
     title.textContent = item.title;
     image.src = item.image;
     content.textContent = item.content;
+    dateEl.textContent = item.date;
+    removeBlogpost.innerHTML = "X";
 
-    liElement.append(title);
     liElement.append(image);
     liElement.append(content);
+    liElement.append(dateEl);
+    liElement.append(removeBlogpost);
 
     divElement.append(liElement);
     sectionPosts.append(divElement);
