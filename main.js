@@ -1,7 +1,7 @@
 //glue
-import { BloggPost } from "./bloggPost.js";
+import { BlogPost } from "./blogpost.js";
 
-const post = new BloggPost();
+const post = new BlogPost();
 
 function printPosts() {
   const sectionPosts = document.getElementById("blogposts-list");

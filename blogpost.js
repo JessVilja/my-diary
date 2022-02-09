@@ -1,5 +1,5 @@
 //klass för logik
-export class BloggPost {
+export class BlogPost {
   constructor() {
     //let date = new Date();
     //const dateT = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
@@ -30,7 +30,12 @@ export class BloggPost {
     let entryTime = [time.getFullYear(), time.getMonth() + 1, time.getDate()];
     return entryTime;
   }
-
+  /**
+   * Add blog post
+   * @param {string} title Blog entry title
+   * @param {string} img adress of image
+   * @param {string} content blog entry content
+   */
   addBlogPost(title, img, content) {
     const newBlog = {
       title: title,
