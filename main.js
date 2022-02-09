@@ -46,3 +46,21 @@ function printPosts() {
 }
 
 printPosts();
+
+document.querySelector("#post-blogpost-btn").onclick = function () {
+  /** @type {HTMLInputElement} */
+  const inputTitle = document.querySelector(
+    "#blogpost-title-container > input"
+  );
+  const blogPostTitle = inputTitle.value;
+
+  const inputImg = document.querySelector("#blogpost-image");
+  const blogImage = inputImg.value;
+
+  const inputContent = document.querySelector("#blogpost-content");
+  const blogContent = inputContent.value;
+
+  post.addBlogPost(blogPostTitle, blogImage, blogContent);
+
+  printPosts();
+};
