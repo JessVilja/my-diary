@@ -4,6 +4,30 @@ import { BlogPost } from "./blogpost.js";
 const post = new BlogPost();
 printPosts();
 
+function printLinksSidebar() {
+  const asideEl = document.getElementById("aside-post-list");
+  asideEl.innerHTML = " ";
+
+  const blogPost = document.getElementById("blogpost-item");
+
+  const savedPost = post.readPostFromStorage();
+
+  for (let i = 0; i < savedPost.length; i++) {
+    const item = savedPost[i];
+    //const post = blogPost.id;
+
+    const aEl = document.createElement("a");
+    //aEl.id = i;
+    aEl.href = "#" + i;
+    // aEl.href = `#${blogPost.href}`;
+    // aEl.id;
+    const linkText = document.createTextNode(`${item.date}
+    `);
+    aEl.append(linkText);
+    asideEl.append(aEl);
+  }
+}
+
 function printPosts() {
   const sectionPosts = document.getElementById("blogposts-list");
   sectionPosts.innerHTML = " ";
@@ -15,6 +39,7 @@ function printPosts() {
 
     const divElement = document.createElement("div");
     divElement.className = "blogpost-items mb-3";
+    divElement.id = `#${i}`;
 
     const liElement = document.createElement("li");
     liElement.className = "blogpost-item text-center";
@@ -67,6 +92,7 @@ document.querySelector("#post-blogpost-btn").onclick = function () {
   post.addBlogPost(blogPostTitle, blogImage, blogContent);
 
   printPosts();
+  printLinksSidebar();
 };
 
 document
@@ -82,5 +108,6 @@ document
       postItem.remove();
 
       printPosts();
+      printLinksSidebar();
     }
   });
