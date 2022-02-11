@@ -1,34 +1,7 @@
 //klass för logik
 export class BlogPost {
   constructor() {
-    //let date = new Date();
-    //const dateT = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
-    this.posts = [
-      {
-        title: "My beautiful morning",
-        image: "assets/sunset.jpg",
-        content: "Lorem ipsum...",
-        date: this.time(),
-      },
-      {
-        title: "My beautiful morning",
-        image: "assets/sunset.jpg",
-        content: "Lorem ipsum...",
-        date: this.time(),
-      },
-      {
-        title: "My beautiful morning",
-        image: "assets/sunset.jpg",
-        content: "Lorem ipsum...",
-        date: this.time(),
-      },
-    ];
-  }
-
-  time() {
-    let time = new Date();
-    let entryTime = [time.getFullYear(), time.getMonth() + 1, time.getDate()];
-    return entryTime;
+    this.posts = [];
   }
   /**
    * Add blog post
@@ -37,13 +10,32 @@ export class BlogPost {
    * @param {string} content blog entry content
    */
   addBlogPost(title, img, content) {
+    let time = new Date();
+    let entryTime = [time.getFullYear(), time.getMonth() + 1, time.getDate()];
+
     const newBlog = {
       title: title,
       image: img,
       content: content,
-      date: this.time(),
+      date: entryTime,
     };
 
     this.posts.push(newBlog);
+    this.savePost();
+  }
+
+  savePost() {
+    window.localStorage.setItem("blogposts", JSON.stringify(this.posts));
+  }
+
+  readPostFromStorage() {
+    return JSON.parse(window.localStorage.getItem("blogposts"));
+  }
+
+  deletePost(selectedPost) {
+    const postsArr = this.readPostFromStorage();
+    postsArr.splice(selectedPost, 1);
+    this.posts = postsArr;
+    this.savePost();
   }
 }

@@ -20,23 +20,9 @@
       <div class="row">
         <aside class="col-lg-4 h-100">
           <section id="aside-post-list">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              impedit, reprehenderit a quod, aliquid delectus officia saepe
-              itaque consequuntur quibusdam voluptate qui eaque, quis quisquam
-              at accusamus cupiditate doloribus vitae. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Soluta impedit, reprehenderit a
-              quod, aliquid delectus officia saepe itaque consequuntur quibusdam
-              voluptate qui eaque, quis quisquam at accusamus cupiditate
-              doloribus vitae. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Soluta impedit, reprehenderit a quod, aliquid
-              delectus officia saepe itaque consequuntur quibusdam voluptate qui
-              eaque, quis quisquam at accusamus cupiditate doloribus vitae.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              impedit, reprehenderit a quod, aliquid delectus officia saepe
-              itaque consequuntur quibusdam voluptate qui eaque, quis quisquam
-              at accusamus cupiditate doloribus vitae.
-            </p>
+            <span> 
+              
+            </span>
           </section>
         </aside>
 
@@ -45,23 +31,26 @@
             id="post-creation"
             class="dashed-border d-flex flex-column p-2 inputContainer mb-4 mt-4"
           >
-            <div id="blogpost-title-container">
-              <label for="blogpost-title" class="form-label">Title:</label>
-              <input
-                type="text"
-                id="blogpost-title"
-                class="form-control"
-              /><br /><br />
-            </div>
-            <div class="blogpost-image-container">
-              <label for="blogpost-image" class="form-label">Image:</label>
-              <input
-                type="text"
-                id="blogpost-image"
-                class="form-control"
-              /><br /><br />
-            </div>
+            <div class="blogentry-container">
+              <div id="blogpost-title-container">
+                <label for="blogpost-title" class="form-label">Title:</label>
+                <input
+                  type="text"
+                  id="blogpost-title"
+                  class="form-control"
+                /><br /><br />
+              </div>
+              <div class="blogpost-image-container">
+                <label for="blogpost-image" class="form-label">Image:</label>
+                <input
+                  type="text"
+                  id="blogpost-image"
+                  class="form-control"
+                /><br /><br />
+              </div>
+           
 
+          
             <div class="blogpost-content-container">
               <label for="blogpost-content" class="form-label">Content:</label>
               <textarea
@@ -75,9 +64,11 @@
                 Post
               </button>
             </div>
+          </div>
           </section>
+        </div>
 
-          <section id="blogposts-lis2t" class="listContainer">
+          <section id="blogposts-list-section" class="listContainer">
             <ul id="blogposts-list"></ul>
           </section>
         </main>
