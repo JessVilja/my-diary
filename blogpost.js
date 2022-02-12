@@ -1,5 +1,11 @@
 //klass för logik
+/**
+ *Class representing a blog post
+ */
 export class BlogPost {
+  /**
+   * Create empty array or get posts from localStorage
+   */
   constructor() {
     if (this.readPostFromStorage != null) {
       this.posts = this.readPostFromStorage();
@@ -9,10 +15,10 @@ export class BlogPost {
   }
 
   /**
-   * Add blog post
-   * @param {string} title Blog entry title
-   * @param {string} img adress of image
-   * @param {string} content blog entry content
+   * Adds a new blog post to the blog
+   * @param {string} title Blog entry title to be added
+   * @param {string} img Image to be added
+   * @param {string} content Content to be added
    */
   addBlogPost(title, img, content) {
     let time = new Date();
@@ -31,10 +37,6 @@ export class BlogPost {
     this.posts.push(newBlog);
     this.savePost();
   }
-  /*
-  saveLinks() {
-    window.localStorage.setItem("links", JSON.stringify(this));
-  } */
 
   savePost() {
     window.localStorage.setItem("blogposts", JSON.stringify(this.posts));

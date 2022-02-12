@@ -7,9 +7,9 @@ const assert = chai.assert;
 
 describe("addBlogPost", function () {
   it("lägger till en ny blogpost", function () {
-    /*Storage.prototype.stashContent = function (key) {
+    Storage.prototype.stashContent = function () {
       // 'this' är det våran localStorage eller sessionStoragez
-      const keyValuePairs = JSON.parse(this.getItem(key));
+      const keyValuePairs = Object.entries(this);
       this.clear();
       return keyValuePairs;
     };
@@ -20,10 +20,10 @@ describe("addBlogPost", function () {
       for (let [key, value] of content) {
         this.setItem(key, value);
       }
-    };*/
+    };
 
     const post = new BlogPost();
-    //const content = localStorage.stashContent("blogposts");
+    const content = localStorage.stashContent();
 
     post.addBlogPost("Test 1", "assets/sunset.jpg", "Lorem ipsum");
 
@@ -31,6 +31,6 @@ describe("addBlogPost", function () {
     // console.log(Object.entries(localStorage));
     assert.equal(lastPost.title, "Test 1");
 
-    //localStorage.restoreContent(content);
+    localStorage.restoreContent(content);
   });
 });
