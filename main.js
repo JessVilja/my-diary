@@ -2,7 +2,9 @@
 import { BlogPost } from "./blogpost.js";
 
 const post = new BlogPost();
+
 printPosts();
+printLinksSidebar();
 
 function printLinksSidebar() {
   const asideEl = document.getElementById("aside-post-list");
@@ -15,7 +17,7 @@ function printLinksSidebar() {
   for (let i = 0; i < savedPost.length; i++) {
     const item = savedPost[i];
     //const post = blogPost.id;
-
+    const pEl = document.createElement("p");
     const aEl = document.createElement("a");
     //aEl.id = i;
     aEl.href = "#" + i;
@@ -23,6 +25,7 @@ function printLinksSidebar() {
     // aEl.id;
     const linkText = document.createTextNode(`${item.date}
     `);
+    aEl.append(pEl);
     aEl.append(linkText);
     asideEl.append(aEl);
   }
@@ -39,7 +42,7 @@ function printPosts() {
 
     const divElement = document.createElement("div");
     divElement.className = "blogpost-items mb-3";
-    divElement.id = `#${i}`;
+    divElement.id = `${i}`;
 
     const liElement = document.createElement("li");
     liElement.className = "blogpost-item text-center";
@@ -78,18 +81,13 @@ function printPosts() {
 
 document.querySelector("#post-blogpost-btn").onclick = function () {
   /** @type {HTMLInputElement} */
-  const inputTitle = document.querySelector(
+  const titleInput = document.querySelector(
     "#blogpost-title-container > input"
-  );
-  const blogPostTitle = inputTitle.value;
+  ).value;
+  const imgInput = document.querySelector("#blogpost-image").value;
+  const contentInput = document.querySelector("#blogpost-content").value;
 
-  const inputImg = document.querySelector("#blogpost-image");
-  const blogImage = inputImg.value;
-
-  const inputContent = document.querySelector("#blogpost-content");
-  const blogContent = inputContent.value;
-
-  post.addBlogPost(blogPostTitle, blogImage, blogContent);
+  post.addBlogPost(titleInput, imgInput, contentInput);
 
   printPosts();
   printLinksSidebar();

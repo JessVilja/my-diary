@@ -1,8 +1,9 @@
 //klass för logik
 export class BlogPost {
   constructor() {
-    this.posts = [];
+    this.posts = this.readPostFromStorage();
   }
+
   /**
    * Add blog post
    * @param {string} title Blog entry title
@@ -11,7 +12,10 @@ export class BlogPost {
    */
   addBlogPost(title, img, content) {
     let time = new Date();
-    let entryTime = [time.getFullYear(), time.getMonth() + 1, time.getDate()];
+    let entryTime = `${time.getFullYear()}/${
+      time.getMonth() + 1
+    }/${time.getDate()}`;
+    //[time.getFullYear(), time.getMonth() + 1, time.getDate()];
 
     const newBlog = {
       title: title,
@@ -23,6 +27,10 @@ export class BlogPost {
     this.posts.push(newBlog);
     this.savePost();
   }
+  /*
+  saveLinks() {
+    window.localStorage.setItem("links", JSON.stringify(this));
+  } */
 
   savePost() {
     window.localStorage.setItem("blogposts", JSON.stringify(this.posts));
