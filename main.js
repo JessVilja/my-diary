@@ -3,14 +3,16 @@ import { BlogPost } from "./blogpost.js";
 
 const post = new BlogPost();
 
-printPosts();
-printLinksSidebar();
+if (post.readPostFromStorage() != null) {
+  printPosts();
+  printLinksSidebar();
+}
 
 function printLinksSidebar() {
   const asideEl = document.getElementById("aside-post-list");
   asideEl.innerHTML = " ";
 
-  const blogPost = document.getElementById("blogpost-item");
+  //const blogPost = document.getElementById("blogpost-item");
 
   const savedPost = post.readPostFromStorage();
 

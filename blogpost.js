@@ -1,7 +1,11 @@
 //klass för logik
 export class BlogPost {
   constructor() {
-    this.posts = this.readPostFromStorage();
+    if (this.readPostFromStorage != null) {
+      this.posts = this.readPostFromStorage();
+    } else {
+      this.posts = [];
+    }
   }
 
   /**
