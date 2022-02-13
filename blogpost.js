@@ -15,7 +15,7 @@ export class BlogPost {
   }
 
   /**
-   * Adds a new blog post to the blog
+   * Adds a new blog post to the blog list
    * @param {string} title Blog post title to be added
    * @param {string} img Image to be added
    * @param {string} content Content to be added
@@ -37,14 +37,26 @@ export class BlogPost {
     this.savePost();
   }
 
+  /**
+   * @method savePost
+   * saves posts in key 'blogposts' in localStorage
+   */
   savePost() {
     window.localStorage.setItem("blogposts", JSON.stringify(this.posts));
   }
-
+  /**
+   * @method readPostFromStorage
+   * @returns array (blog posts) from key 'blogposts' in localStorage, or null if no array exists
+   */
   readPostFromStorage() {
     return JSON.parse(window.localStorage.getItem("blogposts"));
   }
 
+  /**
+   * @method deletePost
+   * deletes posts
+   * @param {string} selectedPost id of the blog post to be deleted
+   */
   deletePost(selectedPost) {
     const postsArr = this.readPostFromStorage();
     postsArr.splice(selectedPost, 1);

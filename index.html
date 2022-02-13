@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/429b21aab6.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,100&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
@@ -17,34 +19,33 @@
   </head>
   <body>
     <div class="wrapper container-fluid">
+      <h1 class="text-center display-3">Welcome to my blog</h1>
+      <p class="text-center lead">about nothing, you decide</p>
       <div class="row">
-        <aside class="col-lg-4 h-100">
-          <section id="aside-post-list">
-           
-          </section>
-        </aside>
+        <aside class="col-4" id="aside-post-list"></aside>
 
+        <main> 
         <section
-            id="post-creation"
-            class="dashed-border d-flex flex-column p-2 inputContainer mb-4 mt-4 col-lg-5 "
-          >
-            <div class="blogentry-container">
-              <div id="blogpost-title-container">
-                <label for="blogpost-title" class="form-label">Title:</label>
-                <input
-                  type="text"
-                  id="blogpost-title"
-                  class="form-control"
-                /><br /><br />
-              </div>
-              <div class="blogpost-image-container">
-                <label for="blogpost-image" class="form-label">Image:</label>
-                <input
-                  type="text"
-                  id="blogpost-image"
-                  class="form-control"
-                /><br /><br />
-              </div>
+          id="post-creation"
+          class="dashed-border d-flex flex-column p-2 inputContainer mb-4 mt-4 col-8"
+        >
+          <div class="blogentry-container">
+            <div id="blogpost-title-container">
+              <label for="blogpost-title" class="form-label">Title:</label>
+              <input
+                type="text"
+                id="blogpost-title"
+                class="form-control"
+              /><br /><br />
+            </div>
+            <div class="blogpost-image-container">
+              <label for="blogpost-image" class="form-label">Image:</label>
+              <input
+                type="text"
+                id="blogpost-image"
+                class="form-control"
+              /><br /><br />
+            </div>
 
             <div class="blogpost-content-container">
               <label for="blogpost-content" class="form-label">Content:</label>
@@ -61,20 +62,17 @@
               </button>
             </div>
           </div>
-          </section>
-        </div>
+        
+      </div>
 
-        <div class="row"> 
-        <main class="col-lg-5 container-fluid">
-          
-        </div>
-
-          <section id="blogposts-list-section" class="listContainer">
-            <ul id="blogposts-list"></ul>
-          </section>
-        </main>
+      <div>
+        <section id="blogposts-list-section" class="listContainer text-center">
+          <ul id="blogposts-list"></ul>
+        </section>
+      </section>
       </div>
     </div>
+  </main>
 
     <script type="module" src="main.js"></script>
   </body>

@@ -12,21 +12,15 @@ function printLinksSidebar() {
   const asideEl = document.getElementById("aside-post-list");
   asideEl.innerHTML = " ";
 
-  //const blogPost = document.getElementById("blogpost-item");
-
   const savedPost = post.readPostFromStorage();
 
   for (let i = 0; i < savedPost.length; i++) {
     const item = savedPost[i];
-    //const post = blogPost.id;
+
     const pEl = document.createElement("p");
     const aEl = document.createElement("a");
-    //aEl.id = i;
     aEl.href = "#" + i;
-    // aEl.href = `#${blogPost.href}`;
-    // aEl.id;
-    const linkText = document.createTextNode(`${item.date}
-    `);
+    const linkText = document.createTextNode(`${item.date}`);
     aEl.append(pEl);
     aEl.append(linkText);
     asideEl.append(aEl);
@@ -55,13 +49,9 @@ function printPosts() {
     const content = document.createElement("p");
 
     const dateEl = document.createElement("span");
-    //dateEl.className = "d-flex justify-content-start";
-
     const removeBlogpost = document.createElement("button");
     removeBlogpost.className = "btn btn-outline-dark removeBtn";
     removeBlogpost.id = i;
-
-    //removeBlogpost.id = "removebtn";
 
     title.textContent = item.title;
     image.src = item.image;
@@ -83,11 +73,11 @@ function printPosts() {
 
 document.querySelector("#post-blogpost-btn").onclick = function () {
   /** @type {HTMLInputElement} */
-  const titleInput = document.querySelector("#blogpost-title").value;
-  const imgInput = document.querySelector("#blogpost-image").value;
-  const contentInput = document.querySelector("#blogpost-content").value;
+  const title = document.querySelector("#blogpost-title").value;
+  const img = document.querySelector("#blogpost-image").value;
+  const content = document.querySelector("#blogpost-content").value;
 
-  post.addBlogPost(titleInput, imgInput, contentInput);
+  post.addBlogPost(title, img, content);
 
   printPosts();
   printLinksSidebar();
@@ -99,7 +89,6 @@ document
     let target = event.target;
 
     if (target.className == "btn btn-outline-dark removeBtn") {
-      //const index = target.findIndex;
       const index = target.id;
       post.deletePost(index);
       let postItem = target.closest(".blogpost-items");

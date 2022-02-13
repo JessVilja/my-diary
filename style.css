@@ -2,28 +2,55 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-image: url("assets/lemons.png");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-color: #cccccc;
+}
+
+p {
+  word-break: break-all;
+}
+
 .dashed-border {
   border: 3px dashed black;
   border-radius: 1rem;
-  background-color: lightgray;
 }
 
 .blogpost-image {
   max-width: 50%;
   /*padding-right: 2rem;*/
 }
-
+/*
 .blogentry-container {
   max-height: 500px;
-}
+} */
 
 #blogposts-list {
   list-style: none;
-  background-color: lightgray;
+  /*background-color: lightgray; */
+  max-width: 70%;
+  margin: auto;
 }
 
 .blogpost-item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.blogpost-item:nth-child(odd) {
   background-color: lightgray;
+}
+
+.blogpost-item:nth-child(even) {
+  background-color: white;
+}
+
+.blogpost-items {
+  box-shadow: 7px 9px 16px 1px rgba(0, 0, 0, 0.67);
+  -webkit-box-shadow: 7px 9px 16px 1px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 7px 9px 16px 1px rgba(0, 0, 0, 0.67);
 }
 
 a:link,
@@ -37,7 +64,23 @@ a:active {
 .listContainer {
   background-color: pink;
 } */
-/*
+
 .inputContainer {
-  max-width: 70%;
-} */
+  background-color: lightgray;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+
+#aside-post-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.inputContainer {
+  position: relative;
+
+  margin: auto;
+}
