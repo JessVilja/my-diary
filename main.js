@@ -38,7 +38,7 @@ function printPosts() {
 
     const divElement = document.createElement("div");
     divElement.className = "blogpost-items mb-3";
-    divElement.id = `${i}`;
+    divElement.id = i;
 
     const liElement = document.createElement("li");
     liElement.className = "blogpost-item text-center";
