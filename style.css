@@ -20,16 +20,10 @@ p {
 
 .blogpost-image {
   max-width: 50%;
-  /*padding-right: 2rem;*/
 }
-/*
-.blogentry-container {
-  max-height: 500px;
-} */
 
 #blogposts-list {
   list-style: none;
-  /*background-color: lightgray; */
   max-width: 70%;
   margin: auto;
 }
@@ -39,12 +33,8 @@ p {
   padding-bottom: 1rem;
 }
 
-.blogpost-item:nth-child(odd) {
+.blogpost-item {
   background-color: lightgray;
-}
-
-.blogpost-item:nth-child(even) {
-  background-color: white;
 }
 
 .blogpost-items {
@@ -60,10 +50,6 @@ a:active {
   color: #000000;
   text-decoration: none;
 }
-/*
-.listContainer {
-  background-color: pink;
-} */
 
 .inputContainer {
   background-color: lightgray;
