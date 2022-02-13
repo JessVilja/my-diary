@@ -72,7 +72,6 @@ function printPosts() {
 }
 
 document.querySelector("#post-blogpost-btn").onclick = function () {
-  /** @type {HTMLInputElement} */
   const title = document.querySelector("#blogpost-title").value;
   const img = document.querySelector("#blogpost-image").value;
   const content = document.querySelector("#blogpost-content").value;
