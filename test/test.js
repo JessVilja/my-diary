@@ -6,16 +6,14 @@ import { BlogPost } from "../blogpost.js";
 const assert = chai.assert;
 
 describe("addBlogPost", function () {
-  it("lägger till en ny blogpost", function () {
+  it("adding a new blog post", function () {
     Storage.prototype.stashContent = function () {
-      // 'this' är det våran localStorage eller sessionStoragez
       const keyValuePairs = Object.entries(this);
       this.clear();
       return keyValuePairs;
     };
 
     Storage.prototype.restoreContent = function (content) {
-      // 'this' är det våran localStorage eller sessionStorage
       this.clear();
       for (let [key, value] of content) {
         this.setItem(key, value);
@@ -23,14 +21,18 @@ describe("addBlogPost", function () {
     };
 
     const post = new BlogPost();
+    console.log(Object.entries(localStorage));
     const content = localStorage.stashContent();
 
+    console.log(Object.entries(localStorage));
     post.addBlogPost("Test 1", "assets/sunset.jpg", "Lorem ipsum");
-
     const lastPost = post.posts[post.posts.length - 1];
-    // console.log(Object.entries(localStorage));
+
     assert.equal(lastPost.title, "Test 1");
 
+    const item = post.posts[0];
+
+    assert.property(item, "title");
     localStorage.restoreContent(content);
   });
 });

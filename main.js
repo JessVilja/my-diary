@@ -83,9 +83,7 @@ function printPosts() {
 
 document.querySelector("#post-blogpost-btn").onclick = function () {
   /** @type {HTMLInputElement} */
-  const titleInput = document.querySelector(
-    "#blogpost-title-container > input"
-  ).value;
+  const titleInput = document.querySelector("#blogpost-title").value;
   const imgInput = document.querySelector("#blogpost-image").value;
   const contentInput = document.querySelector("#blogpost-content").value;
 

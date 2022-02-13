@@ -13,6 +13,10 @@ html {
   /*padding-right: 2rem;*/
 }
 
+.blogentry-container {
+  max-height: 500px;
+}
+
 #blogposts-list {
   list-style: none;
   background-color: lightgray;

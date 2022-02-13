@@ -4,10 +4,10 @@
  */
 export class BlogPost {
   /**
-   * Create empty array or get posts from localStorage
+   * Get posts from localStorage or create empty array
    */
   constructor() {
-    if (this.readPostFromStorage != null) {
+    if (this.readPostFromStorage() != null) {
       this.posts = this.readPostFromStorage();
     } else {
       this.posts = [];
@@ -16,7 +16,7 @@ export class BlogPost {
 
   /**
    * Adds a new blog post to the blog
-   * @param {string} title Blog entry title to be added
+   * @param {string} title Blog post title to be added
    * @param {string} img Image to be added
    * @param {string} content Content to be added
    */
@@ -25,7 +25,6 @@ export class BlogPost {
     let entryTime = `${time.getFullYear()}/${
       time.getMonth() + 1
     }/${time.getDate()}`;
-    //[time.getFullYear(), time.getMonth() + 1, time.getDate()];
 
     const newBlog = {
       title: title,
